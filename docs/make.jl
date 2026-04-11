@@ -1,17 +1,22 @@
 using MultistageTrueAndErrorModels
 using Documenter
 
-DocMeta.setdocmeta!(MultistageTrueAndErrorModels, :DocTestSetup, :(using MultistageTrueAndErrorModels); recursive=true)
+DocMeta.setdocmeta!(
+    MultistageTrueAndErrorModels,
+    :DocTestSetup,
+    :(using MultistageTrueAndErrorModels);
+    recursive = true
+)
 
 makedocs(;
-    modules=[MultistageTrueAndErrorModels],
-    authors="itsdfish <itsdfish@gmail.com> and contributors",
-    sitename="MultistageTrueAndErrorModels.jl",
-    format=Documenter.HTML(;
-        edit_link="main",
-        assets=String[],
+    modules = [MultistageTrueAndErrorModels],
+    authors = "itsdfish <itsdfish@gmail.com> and contributors",
+    sitename = "MultistageTrueAndErrorModels.jl",
+    format = Documenter.HTML(;
+        edit_link = "main",
+        assets = String[]
     ),
-    pages=[
+    pages = [
         "Home" => "index.md",
-    ],
+    ]
 )

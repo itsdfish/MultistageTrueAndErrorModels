@@ -1,9 +1,19 @@
 name = "MultistageTrueAndErrorModels"
 uuid = "fb4bbbae-812b-43d7-a03e-7ac3a4f04240"
-authors = ["itsdfish <itsdfish@gmail.com> and contributors"]
 version = "1.0.0-DEV"
+authors = ["itsdfish <itsdfish@gmail.com> and contributors"]
+
+[deps]
+ArgCheck = "dce04be8-c92d-5529-be00-80e4d2c0e197"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+PrettyTables = "08abe8d2-0d0c-5749-adfa-8a2ac140af0d"
+TrueAndErrorModels = "260ba6b7-9af7-473a-b238-1a1a0638f266"
 
 [compat]
+ArgCheck = "2.5.0"
+Distributions = "0.25.123"
+PrettyTables = "3.3.2"
+TrueAndErrorModels = "0.2.22"
 julia = "1.10.10"
 
 [extras]
