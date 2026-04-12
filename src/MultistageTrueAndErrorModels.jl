@@ -2,6 +2,7 @@ module MultistageTrueAndErrorModels
 
 using ArgCheck
 using Distributions
+using LaTeXStrings
 using PrettyTables
 using TrueAndErrorModels
 
