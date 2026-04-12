@@ -17,8 +17,8 @@ makedocs(
     ),
     modules = [
         MultistageTrueAndErrorModels,
-        #Base.get_extension(MultistageTrueAndErrorModels, :TuringExt),
-        #Base.get_extension(MultistageTrueAndErrorModels, :NamedArraysExt)
+    #Base.get_extension(MultistageTrueAndErrorModels, :TuringExt),
+    #Base.get_extension(MultistageTrueAndErrorModels, :NamedArraysExt)
     ],
     pages = [
         "Home" => "index.md",
