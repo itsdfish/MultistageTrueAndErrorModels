@@ -107,3 +107,89 @@ end
 
     @test sum(probs) ≈ 1
 end
+
+@safetestset "Constructors" begin
+    @safetestset "1" begin
+        using MultistageTrueAndErrorModels
+        using Test
+
+        @test_throws ArgumentError MultistageTrueErrorModel(;
+            b = 0.1,
+            sb = 0.8,
+            sf = 0.4,
+            ϵ = [0.51, 0.04, 0.02, 0.03]
+        )
+    end
+
+    @safetestset "2" begin
+        using MultistageTrueAndErrorModels
+        using Test
+
+        @test_throws ArgumentError MultistageTrueErrorModel(;
+            b = 0.1,
+            sb = 0.8,
+            sf = -0.01,
+            ϵ = [0.05, 0.04, 0.02, 0.03]
+        )
+    end
+
+    @safetestset "3" begin
+        using MultistageTrueAndErrorModels
+        using Test
+
+        @test_throws ArgumentError MultistageTrueErrorModel(;
+            b = 0.1,
+            sb = -0.01,
+            sf = 0.01,
+            ϵ = [0.05, 0.04, 0.02, 0.03]
+        )
+    end
+
+    @safetestset "4" begin
+        using MultistageTrueAndErrorModels
+        using Test
+
+        @test_throws ArgumentError MultistageTrueErrorModel(;
+            b = -0.01,
+            sb = 0.01,
+            sf = 0.01,
+            ϵ = [0.05, 0.04, 0.02, 0.03]
+        )
+    end
+
+    @safetestset "5" begin
+        using MultistageTrueAndErrorModels
+        using Test
+
+        @test_throws ArgumentError MultistageTrueErrorModel(;
+            b = 1.01,
+            sb = 0.01,
+            sf = 0.01,
+            ϵ = [0.05, 0.04, 0.02, 0.03]
+        )
+    end
+
+    @safetestset "6" begin
+        using MultistageTrueAndErrorModels
+        using Test
+
+        @test_throws ArgumentError MultistageTrueErrorModel(;
+            b = 0.01,
+            sb = 1.01,
+            sf = 0.01,
+            ϵ = [0.05, 0.04, 0.02, 0.03]
+        )
+    end
+
+    @safetestset "7" begin
+        using MultistageTrueAndErrorModels
+        using Test
+
+        @test_throws ArgumentError MultistageTrueErrorModel(;
+            b = 0.01,
+            sb = 0.01,
+            sf = 1.01,
+            ϵ = [0.05, 0.04, 0.02, 0.03]
+        )
+    end
+end

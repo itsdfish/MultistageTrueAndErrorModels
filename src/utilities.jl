@@ -3,11 +3,11 @@ function Base.show(io::IO, ::MIME"text/plain", model::MultistageTrueErrorModel)
     model_name = string(T.name.name)
     column_labels = [
         [MultiColumn(3, "p"), MultiColumn(4, "ϵ")],
-        ["b", "sb", "sb̅", "ϵ₁", "ϵ₂", "ϵ₃", "ϵ₄"]
+        ["b", "sb", "sf", "ϵ₁", "ϵ₂", "ϵ₃", "ϵ₄"]
     ]
     return pretty_table(
         io,
-        [model.sb; model.sb̅; model.sb̅; model.ϵ]';
+        [model.sb; model.sf; model.sf; model.ϵ]';
         title = model_name,
         column_label_alignment = :c,
         column_labels = column_labels,
@@ -18,27 +18,27 @@ function Base.show(io::IO, ::MIME"text/plain", model::MultistageTrueErrorModel)
 end
 
 """
-    get_response_labels()
+    get_response_labels(::MultistageTrueErrorModel)
 
 Returns a vector of response pattern labels.
 """
 function get_response_labels(::MultistageTrueErrorModel)
     labels = [
-        L"BBBB"
-        L"FBBB"
-        L"BFBB"
-        L"FFBB"
-        L"BBFB"
-        L"FBFB"
-        L"BFFB"
-        L"FFFB"
-        L"BBBF"
-        L"FBBF"
-        L"BFBF"
-        L"FFBF"
-        L"BBFF"
-        L"FBFF"
-        L"BFFF"
-        L"FFFF"
+        "BBBB"
+        "FBBB"
+        "BFBB"
+        "FFBB"
+        "BBFB"
+        "FBFB"
+        "BFFB"
+        "FFFB"
+        "BBBF"
+        "FBBF"
+        "BFBF"
+        "FFBF"
+        "BBFF"
+        "FBFF"
+        "BFFF"
+        "FFFF"
     ]
 end

@@ -1,24 +1,16 @@
 """
-    MultistageTrueErrorModel{T <: Real} <: AbstractErrorModel{T}
+$(TYPEDEF)
 
-A model object for a True and Error Model of Allias Paradox. Two choice sets are presented twice during the same session, 
-meaning 4 choices are made in total. Subscript r represents risky, subscript s represents safe, and subscripts 1 and 2
-represent choice set. For example, `pᵣᵣ` represents the probability of truely prefering the risky option in both choice sets
-and `ϵₛ₁` represents the error probability of choosing safe given a true preference for risky in first choice set. 
+A True and Error Model of backward vs. forward induction strategy in a two stage sequential decision making
+task (Deng et al., 2026). 
 
 # Fields 
 
 - `b::T`: the probability of using backward induction 
-- `sb::T`: the probability of sticking with backward induction strategy
-- `sf::T`: the probability of sticking with a forward induction strategy
-- `ϵ::AbstractVector{T}`: a vector of error probabilities with elements `ϵ = [ϵ₁, ϵ₂, ϵ₃, ϵ₄]` where ϵᵢ ≤ .50.
-
-
-# Constructors
-
-MultistageTrueErrorModel(p, ϵ)
-
-MultistageTrueErrorModel(; p, ϵ)
+- `sb::T`: the probability of continuing a backward induction strategy in blocks 3 and 4
+- `sf::T`: the probability of continuing a forward induction strategy in blocks 3 and 4
+- `ϵ::AbstractVector{T}`: a vector of error probabilities with elements `ϵ = [ϵ₁, ϵ₂, ϵ₃, ϵ₄]` where `ϵᵢ ≤ .50`
+    and `i` indexes the block id.
 
 # Example 
 
@@ -38,15 +30,15 @@ logpdf(model, data)
 
 # Documentation 
 
-Full documentation can be found at https://itsdfish.github.io/TrueAndErrorModels.jl/dev/
+Full documentation can be found at https://itsdfish.github.io/MultistageTrueAndErrorModels.jl/dev/
 
 # References
 
 Birnbaum, M. H., & Quispe-Torreblanca, E. G. (2018). TEMAP2. R: True and error model analysis program in R. Judgment and Decision Making, 13(5), 428-440.
 
-Lee, M. D. (2018). Bayesian methods for analyzing true-and-error models. Judgment and Decision Making, 13(6), 622-635.
-
 Deng, W., Kellen, D., & Hotaling, J. M. (2026). Toward the cognitive modeling of dynamic decision making. Psychonomic Bulletin & Review, 33(4), 127.
+
+Lee, M. D. (2018). Bayesian methods for analyzing true-and-error models. Judgment and Decision Making, 13(6), 622-635.
 """
 struct MultistageTrueErrorModel{T <: Real} <: AbstractTrueErrorModel{T}
     b::T
@@ -68,12 +60,38 @@ struct MultistageTrueErrorModel{T <: Real} <: AbstractTrueErrorModel{T}
     end
 end
 
+"""
+$(TYPEDSIGNATURES)
+
+A constructor for `MultistageTrueErrorModel`.
+
+# Arguments
+
+- `b::T`: the probability of using backward induction 
+- `sb::T`: the probability of continuing a backward induction strategy in blocks 3 and 4
+- `sf::T`: the probability of continuing a forward induction strategy in blocks 3 and 4
+- `ϵ::AbstractVector{T}`: a vector of error probabilities with elements `ϵ = [ϵ₁, ϵ₂, ϵ₃, ϵ₄]` where `ϵᵢ ≤ .50`
+    and `i` indexes the block id.
+"""
 function MultistageTrueErrorModel(b, sb, sf, ϵ)
     b, sb, sf, _ = promote(b, sb, sf, ϵ[1])
     ϵ = convert(Vector{typeof(b)}, ϵ)
     return MultistageTrueErrorModel(b, sb, sf, ϵ)
 end
 
+"""
+$(TYPEDSIGNATURES)
+
+A constructor for `MultistageTrueErrorModel`.
+
+# Keywords
+
+- `b::T`: the probability of using backward induction 
+- `sb::T`: the probability of continuing a backward induction strategy in blocks 3 and 4
+- `sf::T`: the probability of continuing a forward induction strategy in blocks 3 and 4
+- `ϵ::AbstractVector{T}`: a vector of error probabilities with elements `ϵ = [ϵ₁, ϵ₂, ϵ₃, ϵ₄]` where `ϵᵢ ≤ .50`
+    and `i` indexes the block id.
+"""
 function MultistageTrueErrorModel(; b, sb, sf, ϵ)
     return MultistageTrueErrorModel(b, sb, sf, ϵ)
 end

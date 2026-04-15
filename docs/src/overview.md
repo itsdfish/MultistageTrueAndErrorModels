@@ -3,7 +3,7 @@
 ```
 # Model Overview
 
-One challenge in evaluating theories of decision making is that data likely reflect a mixture of true preferences and response error. Suppose a person selects risky option $\mathcal{R}$ over safe option $\mathcal{S}$. This response could arise through two different pathways. First, a person may truly prefer $\mathcal{R}$ over $\mathcal{S}$ and report his or her preferences accurately. Alternatively, this person may truly prefer $\mathcal{S}$, but select $\mathcal{R}$ accidentially due to various factors,  such as trembling hand, failures of memory and/or reasoning, and lapses of attention. True and Error Theory (TET; Birnbaum,  & Quispe-Torreblanca, 2018) provides a mathematical framework for distinguishing true preferences from errors.  
+One challenge in evaluating theories of decision making is that data likely reflect a mixture of true preferences and response error. Suppose a person selects risky option $\mathcal{R}$ over safe option $\mathcal{S}$. This response could arise through two different pathways. First, a person may truly prefer $\mathcal{R}$ over $\mathcal{S}$ and report his or her preferences accurately. Alternatively, this person may truly prefer $\mathcal{S}$, but select $\mathcal{R}$ accidentially due to various factors,  such as trembling hand, failures of memory and/or reasoning, and lapses of attention. True and Error Theory (TET; Birnbaum & Quispe-Torreblanca, 2018) provides a mathematical framework for distinguishing true preferences from errors.  
 
 # Task
 
@@ -40,10 +40,10 @@ subject to the constraint that ``p_{\mathrm{R_1R_2}} + p_{\mathrm{R_1S_2}} + p_{
 
 The remaining four parameters correspond to error probabilities:
 
-- ``\epsilon_{\mathrm{S}_1}``: the error probability of selecting $\mathcal{S}_1$ given that $\mathcal{R}_1$ is prefered.
-- ``\epsilon_{\mathrm{S}_2}``: the error probability of selecting $\mathcal{S}_2$ given that $\mathcal{R}_2$ is prefered.
-- ``\epsilon_{\mathrm{R}_1}``: the error probability of selecting $\mathcal{R}_1$ given that $\mathcal{S}_1$ is prefered.
-- ``\epsilon_{\mathrm{R}_2}``: the error probability of selecting $\mathcal{R}_2$ given that $\mathcal{S}_2$ is prefered.
+- ``\epsilon_{1}``: the error probability in block 1.
+- ``\epsilon_{2}``: the error probability in block 2.
+- ``\epsilon_{3}``: the error probability in block 3.
+- ``\epsilon_{4}``: the error probability in block 4.
 
 ## Structure
 
@@ -57,134 +57,136 @@ Under this assumption, each response is produced by correctly reporting the pref
 
 Under this alternative assumption, all four responses are produced through error. A similar line of reasoning is used to define the remaining equations below.
 
-### $\mathcal{R}_1\mathcal{R}_2$,$\mathcal{R}_1\mathcal{R}_2$
-``
-\theta_1 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{R}_1\mathcal{R}_2$,$\mathcal{R}_1\mathcal{S}_2$
-``
-\theta_2 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
-### $\mathcal{R}_1\mathcal{R}_2$,$\mathcal{S}_1\mathcal{R}_2$
-``
-\theta_3 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{R}_1\mathcal{R}_2$,$\mathcal{S}_1\mathcal{S}_2$
-``
-\theta_4 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
-### $\mathcal{R}_1\mathcal{S}_2$,$\mathcal{R}_1\mathcal{R}_2$
-``
-\theta_5 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{R}_1\mathcal{S}_2$,$\mathcal{R}_1\mathcal{S}_2$
-``
-\theta_6 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
-### $\mathcal{R}_1\mathcal{S}_2$,$\mathcal{S}_1\mathcal{R}_2$
-``
-\theta_7 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{R}_1\mathcal{S}_2$,$\mathcal{S}_1\mathcal{S}_2$
-``
-\theta_8 =
-    p_{\mathrm{R_1R_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
-### $\mathcal{S}_1\mathcal{R}_2$,$\mathcal{R}_1\mathcal{R}_2$
-``
-\theta_9 =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{S}_1\mathcal{R}_2$,$\mathcal{R}_1\mathcal{S}_2$
-``
+
+### $BBBB$
+```math
+\theta_{1} =
+    b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sb \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+    b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+    (1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sf \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+    (1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4})
+```
+
+### $FBBB$
+```math
+\theta_{2} =
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sb \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sf \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4})
+```
+### $BFBB$
+```math
+\theta_{3} =
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sb \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sb) \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sf \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4})
+```
+### $FFBB$
+```math
+\theta_{4} =
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sb \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sb) \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sf \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4})
+```
+### $BBFB$
+```math
+\theta_{5} =
+b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sb \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sf \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sf) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4})
+```
+### $FBFB$
+```math
+\theta_{6} =
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sb \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sf \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sf) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4})
+```
+### $BFFB$
+```math
+\theta_{7} =
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sb \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sf \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4})
+```
+### $FFFB$
+```math
+\theta_{8} =
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sb \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sf \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4})
+```
+### $BBBF$
+```math
+\theta_{9} =
+b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sb \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sf \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4}
+```
+### $FBBF$
+```math
 \theta_{10} =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
-### $\mathcal{S}_1\mathcal{R}_2$,$\mathcal{S}_1\mathcal{R}_2$
-``
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sb \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sf \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4}
+```
+### $BFBF$
+```math
 \theta_{11} =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{S}_1\mathcal{R}_2$,$\mathcal{S}_1\mathcal{S}_2$
-``
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sb \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sb) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sf \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4}
+```
+### $FFBF$
+```math
 \theta_{12} =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
-### $\mathcal{S}_1\mathcal{S}_2$,$\mathcal{R}_1\mathcal{R}_2$
-``
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sb \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4} + \\
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sb) \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sf \cdot \epsilon_{3} \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot (1 - \epsilon_{3}) \cdot \epsilon_{4}
+```
+### $BBFF$
+```math
 \theta_{13} =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{S}_1\mathcal{S}_2$,$\mathcal{R}_1\mathcal{S}_2$
-``
+b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sb \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+b \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sf \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sf) \cdot \epsilon_{3} \cdot \epsilon_{4}
+```
+### $FBFF$
+```math
 \theta_{14} =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{S}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{R}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{R}_1} \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
-### $\mathcal{S}_1\mathcal{S}_2$,$\mathcal{S}_1\mathcal{R}_2$
-``
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sb \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+b \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sf \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sf) \cdot \epsilon_{3} \cdot \epsilon_{4}
+```
+### $BFFF$
+```math
 \theta_{15} =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{R}_2} + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{S}_2}) + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{R}_2}
-``
-### $\mathcal{S}_1\mathcal{S}_2$,$\mathcal{S}_1\mathcal{S}_2$
-``
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot sb \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+b \cdot (1 - \epsilon_{1}) \cdot \epsilon_{2} \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot sf \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot \epsilon_{1} \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot \epsilon_{3} \cdot \epsilon_{4}
+```
+### $FFFF$
+```math
 \theta_{16} =
-    p_{\mathrm{R_1R_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} \cdot \epsilon_{\mathrm{S}_1} \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{R_1S_2}} \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot \epsilon_{\mathrm{S}_1} \cdot (1 - \epsilon_{\mathrm{R}_2}) + \\ 
-    p_{\mathrm{S_1R_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot \epsilon_{\mathrm{S}_2} + \\ 
-    p_{\mathrm{S_1S_2}} \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2}) \cdot (1 - \epsilon_{\mathrm{R}_1}) \cdot (1 - \epsilon_{\mathrm{R}_2})
-``
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot sb \cdot \epsilon_{3} \cdot \epsilon_{4} + \\
+b \cdot \epsilon_{1} \cdot \epsilon_{2} \cdot (1 - sb) \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot sf \cdot (1 - \epsilon_{3}) \cdot (1 - \epsilon_{4}) + \\
+(1 - b) \cdot (1 - \epsilon_{1}) \cdot (1 - \epsilon_{2}) \cdot (1 - sf) \cdot \epsilon_{3} \cdot \epsilon_{4}
+```
 # References
 
 Birnbaum, M. H., & Quispe-Torreblanca, E. G. (2018). TEMAP2. R: True and error model analysis program in R. Judgment and Decision Making, 13(5), 428-440.

@@ -81,7 +81,7 @@ sb = .40
 ``
 
 ``
-s\bar{b} = .20
+sf= .20
 ``
 
 ``
@@ -142,7 +142,7 @@ sb \sim \mathrm{uniform}(0, 1)
 ``
 
 ``
-s\bar{b} \sim \mathrm{uniform}(0, 1)
+sf \sim \mathrm{uniform}(0, 1)
 ``
 
 ``
@@ -234,5 +234,7 @@ The data-generating parameters are represented as black vertical lines in the de
 # References
 
 Birnbaum, M. H., & Quispe-Torreblanca, E. G. (2018). TEMAP2. R: True and error model analysis program in R. Judgment and Decision Making, 13(5), 428-440.
+
+Deng, W., Kellen, D., & Hotaling, J. M. (2026). Toward the cognitive modeling of dynamic decision making. Psychonomic Bulletin & Review, 33(4), 127.
 
 Lee, M. D. (2018). Bayesian methods for analyzing true-and-error models. Judgment and Decision Making, 13(6), 622-635.

@@ -3,7 +3,7 @@
 ```
 ## Constructors
 ```@docs
-TrueErrorModel
+MultistageTrueErrorModel
 ```
 
 ## Core Functions
@@ -14,19 +14,8 @@ logpdf
 rand
 ```
 
-## Off-the-shelf Turing Models
-```@docs
-tet1_model
-tet2_model
-tet4_model
-eut1_model
-eut2_model
-eut4_model
-```
-
 ## Utilities 
 
 ```@docs
 get_response_labels
-to_table
 ```
