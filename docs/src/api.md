@@ -10,8 +10,6 @@ MultistageTrueErrorModel
 
 ```@docs
 compute_probs
-logpdf
-rand
 ```
 
 ## Utilities 

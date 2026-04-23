@@ -70,27 +70,23 @@ Random.seed!(685)
 
 ## Generate Data
 
-For a description of the decision making task, please see the description in the [model overview](https://itsdfish.github.io/TrueAndErrorModels.jl/dev/overview/). In the code block below, we will create a model object and generate 2 simulated responses from 100 simulated subjects for a total of 200 responses. For this model, we assume that the probability of a true preference state RR is relatively high, and the probability of other preference states decreases as they become more difference from RR:
+For a description of the decision making task, please see the description in the [model overview](https://itsdfish.github.io/TrueAndErrorModels.jl/dev/overview/). In the code block below, we will create a model object and generate responses from 200 simulated subjects.
 
 ``
 b = .30
 ``
 
 ``
-sb = .40
+s_b = .40
 ``
 
 ``
-sf= .20
+s_f = .20
 ``
 
 ``
-\epsilon = .50
+\epsilon_{1} = \epsilon_{2} = \epsilon_{3} =\epsilon_{4} = .10
 ``
-
-In addition, our model assumes the error probabilities are constrained to be equal:
-
-``\epsilon_{1} = \epsilon_{2} = \epsilon_{3} =\epsilon_{4} = .10``
 
 ```julia
 model = MultistageTrueErrorModel(;
@@ -125,13 +121,13 @@ data = rand(model, 200)
 
 In the output above, we see the response vector has 16 elements, which correspond to response frequencies for the 16 response patterns:
 
-``\{(\mathcal{R}_1\mathcal{R}_2,\mathcal{R}_1\mathcal{R}_2),(\mathcal{R}_1\mathcal{R}_2,\mathcal{R}_1\mathcal{S}_2), \dots, (\mathcal{S}_1\mathcal{S}_2,\mathcal{S}_1\mathcal{S}_2)\},``
+``\{(B,B,B,B),(F,B,B,B) \dots (F,F,F,F)\},``
 
-where $\mathcal{R}$ and $\mathcal{S}$ correspond to risky and safe options, respectively, and the subscript indexes the choice set.  
+where $B$ and $F$ correspond to backward and forward induction strategies, respectively.
 
 ## The Turing Model
 
-The TET1 model is automatically loaded when Turing is loaded into your Julia session. The `tet1_model` function accepts a vector of response frequencies. The prior distributions are as follows:
+The prior distributions for the parameters are as follows:
 
 ``
 b \sim \mathrm{uniform}(0, 1)
@@ -149,7 +145,7 @@ sf \sim \mathrm{uniform}(0, 1)
 \epsilon \sim \mathrm{uniform}(0, .5)
 ``
 
-where $\mathbf{p}$ is a vector of four preference state parameters, and $\epsilon$ is a scalar. In the TET1 model, we assume ``\epsilon = \epsilon_{1} = \epsilon_{2} = \epsilon_{3} =\epsilon_{4}``. 
+with the constraint that ``\epsilon_{1} = \epsilon_{2} = \epsilon_{3} =\epsilon_{4} = \epsilon``
 
 ```julia
 @model function model1(data::Vector{<:Integer})

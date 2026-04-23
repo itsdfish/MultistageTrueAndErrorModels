@@ -2,7 +2,7 @@ function Base.show(io::IO, ::MIME"text/plain", model::MultistageTrueErrorModel)
     T = typeof(model)
     model_name = string(T.name.name)
     column_labels = [
-        [MultiColumn(3, "p"), MultiColumn(4, "ϵ")],
+        [MultiColumn(3, "true"), MultiColumn(4, "error")],
         ["b", "sb", "sf", "ϵ₁", "ϵ₂", "ϵ₃", "ϵ₄"]
     ]
     return pretty_table(
@@ -22,8 +22,8 @@ end
 
 Returns a vector of response pattern labels.
 """
-function get_response_labels(::MultistageTrueErrorModel)
-    labels = [
+function get_response_labels(::Type{<:MultistageTrueErrorModel})
+    return [
         "BBBB"
         "FBBB"
         "BFBB"

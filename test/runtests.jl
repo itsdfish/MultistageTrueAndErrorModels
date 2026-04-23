@@ -108,7 +108,7 @@ end
     @test sum(probs) ≈ 1
 end
 
-@safetestset "Constructors" begin
+@safetestset "constructors" begin
     @safetestset "1" begin
         using MultistageTrueAndErrorModels
         using Test

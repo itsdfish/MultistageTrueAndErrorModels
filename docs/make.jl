@@ -1,5 +1,4 @@
 using Documenter
-using NamedArrays
 using MultistageTrueAndErrorModels
 using Turing
 

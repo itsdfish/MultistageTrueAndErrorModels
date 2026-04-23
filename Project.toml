@@ -18,7 +18,7 @@ ArgCheck = "2.5.0"
 Distributions = "0.25.123"
 DocStringExtensions = "0.9.5"
 PrettyTables = "3.3.2"
-TrueAndErrorModels = "0.2.22"
+TrueAndErrorModels = "0.3.0"
 julia = "1.10.10"
 
 [extras]

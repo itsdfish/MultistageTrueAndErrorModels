@@ -1,7 +1,7 @@
 """
 $(TYPEDEF)
 
-A True and Error Model of backward vs. forward induction strategy in a two stage sequential decision making
+A True and Error Model of backward vs.forward induction strategy in a two stage sequential decision making
 task (Deng et al., 2026). 
 
 # Fields 
