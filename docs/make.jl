@@ -28,4 +28,4 @@ makedocs(
     ]
 )
 
-deploydocs(repo = "github.com/itsdfish/MultistageTrueAndErrorModels.jl.git")
+deploydocs(repo = "github.com/itsdfish/MultistageTrueAndErrorModels.git")
