@@ -8,3 +8,4 @@ TuringUtilities = "35dc62cd-6c01-44e1-a736-6cc36bfce0cc"
 
 [compat]
 Documenter = "1.17.0"
+Turing = "0.45.0"
