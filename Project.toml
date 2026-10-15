@@ -10,13 +10,13 @@ DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 PrettyTables = "08abe8d2-0d0c-5749-adfa-8a2ac140af0d"
 TrueAndErrorModels = "260ba6b7-9af7-473a-b238-1a1a0638f266"
 
-[sources]
-TrueAndErrorModels = {url = "https://github.com/itsdfish/TrueAndErrorModels.jl"}
+[sources.TrueAndErrorModels]
+url = "https://github.com/itsdfish/TrueAndErrorModels.jl"
 
 [compat]
 ArgCheck = "2.5.0"
 Distributions = "0.25.123"
-DocStringExtensions = "0.9.5"
+DocStringExtensions = "0.9.5, 0.10"
 PrettyTables = "3.3.2"
 TrueAndErrorModels = "0.3.0"
 julia = "1.10.10"
